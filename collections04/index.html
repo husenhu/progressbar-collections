@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Progress Bar Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Lato:300">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js"></script>
+  <style>
+    body {
+        margin: 20px auto;
+        font-family: 'Lato';
+        font-weight: 300;
+        width: 600px;
+        text-align: center;
+    }
+
+    #line-container {
+        width: 300px;
+        height: 8px;
+        margin: 50px auto;
+    }
+
+    #circle-container {
+        width: 200px;
+        height: 200px;
+        margin: 50px auto;
+    }
+
+    #semi-container {
+        width: 200px;
+        height: 100px;
+        margin: 50px auto;
+    }
+  </style>
+</head>
+<body>
+    <div id="line-container"></div>
+    <div id="circle-container"></div>
+    <div id="semi-container"></div>
+
+    <script>
+        var lineBar = new ProgressBar.Line('#line-container', {
+            color: 'orange',
+            strokeWidth: 2,
+            trailWidth: 0.5
+        });
+
+        lineBar.animate(1, {
+            duration: 1000
+        });
+
+        var circleBar = new ProgressBar.Circle('#circle-container', {
+            color: 'white',
+            strokeWidth: 2,
+            trailWidth: 10,
+            trailColor: 'black',
+            easing: 'easeInOut'
+        });
+
+        circleBar.animate(0.75, {
+            duration: 1500
+        });
+
+        var semiBar = new ProgressBar.SemiCircle('#semi-container', {
+            color: 'violet',
+            strokeWidth: 2,
+            trailWidth: 0.5,
+            easing: 'bounce'
+        });
+
+        semiBar.animate(1, {
+            duration: 3000
+        });
+    </script>
+</body>
+</html>
